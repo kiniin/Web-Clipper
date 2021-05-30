@@ -1,0 +1,31 @@
+{
+  "name": "demo",
+  "version": "1.0",
+  "description": "ScreenCapture.",
+  "background": {
+    "scripts": ["bg.js"]
+  },
+  "browser_action": {
+    "default_icon": "icon-19.png",
+    "default_popup": "popup.html" 
+  },
+  "icons" : {
+    "48" : "icon-48.png",
+    "128" : "icon-128.png"
+  },
+  "manifest_version": 2,
+  "permissions": [
+    "tabs",
+    "storage",
+    "<all_urls>",
+    "activeTab",
+    "notifications"
+  ],
+  "content_scripts": 
+	[
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content-scripts.js"]
+		}
+	]
+}
